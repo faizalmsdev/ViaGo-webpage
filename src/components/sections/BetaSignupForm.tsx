@@ -58,8 +58,8 @@ export function BetaSignupForm() {
     <div className="min-h-screen flex items-center justify-center p-4 bg-zinc-800">
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center lg:pr-8">
-          <h1 className="text-7xl font-bold text-white mb-6 tracking-tight">Viago</h1>
-          <p className="text-3xl text-[#ffbf00] font-semibold mb-4">Coming Soon</p>
+          <h1 className="text-7xl font-bold text-white mb-6 tracking-tight text-center">Viago</h1>
+          <p className="text-3xl text-[#ffbf00] font-semibold mb-4 text-center">Coming Soon</p>
           <p className="text-zinc-400 text-xl leading-relaxed">
             We're building something exciting and can't wait to share it with you. Join our beta program to be among the first to experience Viago and help shape its future.
           </p>

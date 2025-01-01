@@ -19,7 +19,7 @@ export function Hero() {
 />
 
 
-      <div className="container mx-auto px-4 relative z-10 py-20 text-center">
+      <div className="container mx-auto px-4 relative z-10 pt-20  md:py-20 text-center">
         <motion.div 
           className="max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export function Hero() {
           <p className="text-xl text-zinc-200 mb-8">
             Zero commission. Maximum earnings. Community-driven ride-sharing and bike rentals that put you in control.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
             <Button 
               size="lg"
               className="bg-[#ffbf00] hover:bg-[#ffd700] text-black font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
