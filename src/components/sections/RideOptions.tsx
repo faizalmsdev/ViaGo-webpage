@@ -60,7 +60,7 @@ export function RideOptions() {
                 </ul>
                 <p className="text-[#ffbf00] font-semibold mb-4">{option.price}</p>
                 <Button 
-                  className="w-full"
+                  // className="w-full"
                   style={{ backgroundColor: '#ffbf00' }}
                   className="w-full hover:brightness-110 text-black font-semibold"
                 >
