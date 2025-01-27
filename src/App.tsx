@@ -4,7 +4,7 @@ import { Features } from '@/components/sections/Features';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { RideOptions } from '@/components/sections/RideOptions';
 import { Safety } from '@/components/sections/Safety';
-import { Stats } from '@/components/sections/Stats';
+// import { Stats } from '@/components/sections/Stats';
 import { Footer } from '@/components/layout/Footer';
 import { BetaSignupForm } from '@/components/sections/BetaSignupForm'
 
