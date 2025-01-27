@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Car, Bike, Users, Clock } from 'lucide-react';
+import { useEffect } from 'react';
 
 const options = [
   {
@@ -8,34 +9,59 @@ const options = [
     title: 'Daily Commute',
     description: 'Regular rides to work or college',
     features: ['Schedule recurring trips', 'Match with regular co-riders', 'Split costs efficiently'],
-    price: 'From ₹5/km'
+    price: 'From ₹5/km (*Price may varry)'
   },
   {
     icon: Users,
     title: 'Outstation',
     description: 'Intercity travel made affordable',
     features: ['Long-distance rides', 'Flexible scheduling', 'Comfortable vehicles'],
-    price: 'From ₹7/km'
+    price: 'From ₹7/km (*Price may varry)'
   },
   {
     icon: Bike,
     title: 'Bike Rentals',
     description: 'Rent bikes for short trips',
     features: ['Hourly rentals', 'Wide variety of bikes', 'No security deposit'],
-    price: 'From ₹20/hour'
+    price: 'From ₹20/hour (*Price may varry)'
   },
   {
     icon: Clock,
     title: 'Scheduled Rides',
     description: 'Plan your trips in advance',
     features: ['Book up to 7 days ahead', 'Guaranteed availability', 'Fixed pricing'],
-    price: 'From ₹6/km'
+    price: 'From ₹6/km (*Price may varry)'
   }
 ];
 
 export function RideOptions() {
+  
+  useEffect(() => {
+    const handleSmoothScroll = (event: MouseEvent) => {
+      const anchor = (event.target as HTMLElement).closest('a[href^="#"]');
+      if (!anchor) return;
+  
+      event.preventDefault();
+      const targetId = anchor.getAttribute('href')?.substring(1);
+      const targetElement = document.getElementById(targetId!);
+  
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+  
+    document.addEventListener('click', handleSmoothScroll);
+  
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
+
   return (
-    <section className="py-24 bg-zinc-800">
+    <section id="pricing" className="py-24 bg-zinc-800">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Choose Your Ride</h2>

@@ -4,11 +4,37 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import autoGif from '../assests/auto.gif';
+import { useEffect } from 'react';
 
 
 export function Hero() {
+
+  useEffect(() => {
+    const handleSmoothScroll = (event: MouseEvent) => {
+      const anchor = (event.target as HTMLElement).closest('a[href^="#"]');
+      if (!anchor) return;
+  
+      event.preventDefault();
+      const targetId = anchor.getAttribute('href')?.substring(1);
+      const targetElement = document.getElementById(targetId!);
+  
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+  
+    document.addEventListener('click', handleSmoothScroll);
+  
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
+
   return (
-    <header className="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-900">
+    <header id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-900">
 
 <motion.div 
   className="absolute inset-0 opacity-30 bg-cover bg-center"

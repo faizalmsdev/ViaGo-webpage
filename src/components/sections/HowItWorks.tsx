@@ -1,4 +1,5 @@
 import { Car, MapPin, Phone, Clock } from 'lucide-react';
+import { useEffect } from 'react';
 
 const steps = [
   {
@@ -24,8 +25,33 @@ const steps = [
 ];
 
 export function HowItWorks() {
+
+  useEffect(() => {
+    const handleSmoothScroll = (event: MouseEvent) => {
+      const anchor = (event.target as HTMLElement).closest('a[href^="#"]');
+      if (!anchor) return;
+  
+      event.preventDefault();
+      const targetId = anchor.getAttribute('href')?.substring(1);
+      const targetElement = document.getElementById(targetId!);
+  
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+  
+    document.addEventListener('click', handleSmoothScroll);
+  
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
+
   return (
-    <section className="py-24 bg-zinc-900">
+    <section id="how-it-works" className="py-24 bg-zinc-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">How Viago Works</h2>

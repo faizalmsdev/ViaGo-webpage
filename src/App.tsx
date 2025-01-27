@@ -18,7 +18,7 @@ function App() {
       <RideOptions />
       <Safety />
       <BetaSignupForm />
-      <Stats />
+      {/* <Stats /> */}
       <Footer />
     </div>
   );

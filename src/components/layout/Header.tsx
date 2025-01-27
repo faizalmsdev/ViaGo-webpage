@@ -5,6 +5,16 @@ import { Button } from '@/components/ui/button';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+   const handleScrollToBeta = () => {
+    const targetElement = document.getElementById('get-beta');
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <header className="fixed w-full top-0 z-50 bg-zinc-900/90 backdrop-blur-md border-b border-zinc-800 px-6">
       <div className="container mx-auto px-4">
@@ -24,12 +34,13 @@ export function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-white">
+            {/* <Button variant="ghost" className="text-white">
               Sign In
-            </Button>
+            </Button> */}
             <Button 
               style={{ backgroundColor: '#ffbf00' }}
               className="hover:brightness-110 text-black font-semibold"
+              onClick={handleScrollToBeta} 
             >
               Get Started
             </Button>

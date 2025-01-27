@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -17,8 +17,30 @@ const formSchema = z.object({
   number: z.string().regex(/^\+?[1-9]\d{1,14}$/, { message: 'Please enter a valid phone number.' }),
   message: z.string().optional(),
 })
-
 export function BetaSignupForm() {
+  useEffect(() => {
+    const handleSmoothScroll = (event: MouseEvent) => {
+      const anchor = (event.target as HTMLElement).closest('a[href^="#"]');
+      if (!anchor) return;
+  
+      event.preventDefault();
+      const targetId = anchor.getAttribute('href')?.substring(1);
+      const targetElement = document.getElementById(targetId!);
+  
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+  
+    document.addEventListener('click', handleSmoothScroll);
+  
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
   const [isLoading, setIsLoading] = useState(false)
   const [notification, setNotification] = useState<{ type: 'success' | 'error', message: string } | null>(null)
 
@@ -55,7 +77,7 @@ export function BetaSignupForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-zinc-800">
+    <section id="get-beta" className="min-h-screen flex items-center justify-center p-4 bg-zinc-800">
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center lg:pr-8">
           <h1 className="text-7xl font-bold text-white mb-6 tracking-tight text-center">Viago</h1>
@@ -139,6 +161,6 @@ export function BetaSignupForm() {
           </div>
         </Card>
       </div>
-    </div>
+    </section>
   )
 }
