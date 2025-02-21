@@ -8,7 +8,7 @@ import { Safety } from "@/components/sections/Safety";
 import { Footer } from "@/components/layout/Footer";
 import { BetaSignupForm } from "@/components/sections/BetaSignupForm";
 import DeleteAccountPage from "@/components/DeleteAccountPage"; 
-
+ 
 function App() {
   return (
     <Router>
