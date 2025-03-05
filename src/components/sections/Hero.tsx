@@ -59,20 +59,23 @@ export function Hero() {
             Zero commission. Maximum earnings. Community-driven ride-sharing and bike rentals that put you in control.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
-            <Button 
-              size="lg"
-              className="bg-[#ffbf00] hover:bg-[#ffd700] text-black font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
-            >
-              Start Driving
-              <ArrowRight className="ml-2" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-white border-white bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg hover:bg-opacity-20 transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
-            >
-              Book a Ride
-            </Button>
+          <Button 
+            size="lg"
+            className="bg-[#ffbf00] hover:bg-[#ffd700] text-black font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
+            onClick={() => window.open("https://play.google.com/store/apps/details?id=com.viagocab.viago", "_blank")}
+          >
+            Start Driving
+            <ArrowRight className="ml-2" />
+          </Button>
+
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="text-white border-white bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg hover:bg-opacity-20 transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
+            onClick={() => window.open("https://play.google.com/store/apps/details?id=com.viagocab.viago", "_blank")}
+          >
+            Book a Ride
+          </Button>
           </div>
         </motion.div>
       </div>

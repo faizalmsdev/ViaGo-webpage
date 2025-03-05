@@ -42,7 +42,7 @@ export function Header() {
               className="hover:brightness-110 text-black font-semibold"
               onClick={handleScrollToBeta} 
             >
-              Get Started
+              Suggestions?
             </Button>
           </div>
 

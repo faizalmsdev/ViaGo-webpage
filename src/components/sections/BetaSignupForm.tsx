@@ -81,15 +81,15 @@ export function BetaSignupForm() {
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center lg:pr-8">
           <h1 className="text-7xl font-bold text-white mb-6 tracking-tight text-center">Viago</h1>
-          <p className="text-3xl text-[#ffbf00] font-semibold mb-4 text-center">Coming Soon</p>
+          <p className="text-3xl text-[#ffbf00] font-semibold mb-4 text-center">Viago is Now Live! 🚀</p>
           <p className="text-zinc-400 text-xl leading-relaxed">
-            We're building something exciting and can't wait to share it with you. Join our beta program to be among the first to experience Viago and help shape its future.
+            The wait is over! Viago is officially available on the Play Store. Experience smarter, faster, and seamless rides today. Download now and start your journey with us!  
           </p>
         </div>
 
         <Card className="bg-zinc-800/50 backdrop-blur border-zinc-700/50">
           <div className="p-8">
-            <h2 className="text-3xl font-bold text-white mb-2">Join Viago Beta</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">Drop Your Feedback!</h2>
             <p className="text-zinc-400 mb-8 text-lg">Your feedback will be invaluable in making Viago better for everyone.</p>
             {notification && (
               <div className={`p-4 mb-6 rounded ${notification.type === 'success' ? 'bg-green-500' : 'bg-red-500'}`}>
@@ -154,7 +154,7 @@ export function BetaSignupForm() {
                   )}
                 />
                 <Button type="submit" className="w-full bg-[#ffbf00] text-black hover:bg-[#e6ac00] text-lg py-6" disabled={isLoading}>
-                  {isLoading ? 'Submitting...' : 'Join Viago Beta'}
+                  {isLoading ? 'Sending...' : 'Send Your love'}
                 </Button>
               </form>
             </Form>
