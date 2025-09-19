@@ -7,12 +7,14 @@ import { RideOptions } from "@/components/sections/RideOptions";
 import { Safety } from "@/components/sections/Safety";
 import { Footer } from "@/components/layout/Footer";
 import { BetaSignupForm } from "@/components/sections/BetaSignupForm";
+import { Survey } from "@/components/sections/Survey";
+import { Toaster } from "@/components/ui/toaster";
 import DeleteAccountPage from "@/components/DeleteAccountPage"; 
  
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-zinc-900">
+      <div className="min-h-screen w-full bg-zinc-900">
         <Header />
         <Routes>
           <Route
@@ -29,8 +31,10 @@ function App() {
             }
           />
           <Route path="/delete-account" element={<DeleteAccountPage />} />
+          <Route path="/survey" element={<Survey />} />
         </Routes>
         <Footer />
+        <Toaster />
       </div>
     </Router>
   );
