@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -21,6 +21,32 @@ export function Survey() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // Load Google Analytics for survey page
+  useEffect(() => {
+    // Check if gtag script is already loaded for survey
+    const existingScript = document.querySelector('script[src*="G-K2PH603QNL"]');
+    if (existingScript) return;
+
+    // Load gtag script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-K2PH603QNL';
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    script.onload = () => {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      function gtag(...args: any[]) {
+        (window as any).dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-K2PH603QNL');
+      
+      // Make gtag globally available
+      (window as any).gtag = gtag;
+    };
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
