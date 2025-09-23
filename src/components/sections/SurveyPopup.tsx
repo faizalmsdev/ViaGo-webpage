@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { X } from 'lucide-react';
 
 interface SurveyData {
   email?: string;
@@ -12,7 +13,12 @@ interface SurveyData {
   fareAmount: number;
 }
 
-export function Survey() {
+interface SurveyPopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export function SurveyPopup({ isOpen, onClose }: SurveyPopupProps) {
   const [formData, setFormData] = useState<SurveyData>({
     email: '',
     fromLocation: '',
@@ -22,8 +28,10 @@ export function Survey() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Load Google Analytics for survey page
+  // Load Google Analytics for survey popup
   useEffect(() => {
+    if (!isOpen) return;
+    
     // Check if gtag script is already loaded for survey
     const existingScript = document.querySelector('script[src*="G-K2PH603QNL"]');
     if (existingScript) return;
@@ -46,7 +54,7 @@ export function Survey() {
       // Make gtag globally available
       (window as any).gtag = gtag;
     };
-  }, []);
+  }, [isOpen]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -98,13 +106,15 @@ export function Survey() {
           title: "Thank you!",
           description: "Your survey response has been submitted successfully. We'll be in touch!",
         });
-        // Reset form
+        
+        // Reset form and close popup
         setFormData({
           email: '',
           fromLocation: '',
           toLocation: '',
           fareAmount: 0,
         });
+        onClose();
       } else {
         throw new Error('Failed to submit survey');
       }
@@ -119,34 +129,44 @@ export function Survey() {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-zinc-900 py-16 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center my-8">
-          <h1 className="text-4xl font-bold text-white mb-4">Help Us Shape ViaGo</h1>
-          <p className="text-zinc-300 text-lg leading-relaxed">
-            We, the ViaGo team, want to know what price you are okay with to travel from your location 
-            to office or to your desired location so we can bring that to possible. At that time we will 
-            mail you. Currently we are in beta step, so your guidance may change us and us means you also. 
-            Thanks!
-          </p>
-        </div>
+  const handleClose = () => {
+    // Store in localStorage that popup has been closed (but not submitted)
+    localStorage.setItem('surveyPopupClosed', '1');
+    onClose();
+  };
 
-        <Card className="bg-zinc-800 border-zinc-700">
-          <CardHeader>
-            <CardTitle className="text-white text-2xl">Share Your Travel Preferences</CardTitle>
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <Card className="bg-zinc-800 border-zinc-700 relative">
+          {/* Close button */}
+          <button
+            onClick={handleClose}
+            className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
+            aria-label="Close survey"
+          >
+            <X size={24} />
+          </button>
+          
+          <CardHeader className="pr-12">
+            <CardTitle className="text-white text-2xl">Help Us Shape ViaGo</CardTitle>
             <CardDescription className="text-zinc-400">
-              Help us understand your travel needs and budget expectations
+              We want to know what price you are okay with to travel from your location 
+              to office or to your desired location so we can bring that to possible. At that time we will 
+              mail you. Currently we are in beta step, so your guidance may change us and us means you also. 
+              Thanks!
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-white">
+                <Label htmlFor="popup-email" className="text-white">
                   Email Address <span className="text-zinc-500">(optional)</span>
                 </Label>
                 <Input
-                  id="email"
+                  id="popup-email"
                   name="email"
                   type="email"
                   placeholder="your.email@example.com"
@@ -157,13 +177,13 @@ export function Survey() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="fromLocation" className="text-white">
+                <Label htmlFor="popup-fromLocation" className="text-white">
                     From Location <span className="text-red-400">*</span> 
-                    (Nearby area or landmark is enough, e.g., Broadway, Thiruvanmiyur, Guindy)
+                    <br />
+                    <span className="text-sm text-zinc-400">(Nearby area or landmark is enough, e.g., Broadway, Thiruvanmiyur, Guindy)</span>
                 </Label>
-
                 <Input
-                  id="fromLocation"
+                  id="popup-fromLocation"
                   name="fromLocation"
                   type="text"
                   placeholder="Your starting location"
@@ -175,12 +195,13 @@ export function Survey() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="toLocation" className="text-white">
+                <Label htmlFor="popup-toLocation" className="text-white">
                   To Location <span className="text-red-400">*</span>
-                  (Nearby area or landmark is enough, e.g., Broadway, Thiruvanmiyur, Guindy)
+                  <br />
+                  <span className="text-sm text-zinc-400">(Nearby area or landmark is enough, e.g., Broadway, Thiruvanmiyur, Guindy)</span>
                 </Label>
                 <Input
-                  id="toLocation"
+                  id="popup-toLocation"
                   name="toLocation"
                   type="text"
                   placeholder="Your destination (office, etc.)"
@@ -192,11 +213,11 @@ export function Survey() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="fareAmount" className="text-white">
+                <Label htmlFor="popup-fareAmount" className="text-white">
                   Fare Amount (in rupee) <span className="text-red-400">*</span>
                 </Label>
                 <Input
-                  id="fareAmount"
+                  id="popup-fareAmount"
                   name="fareAmount"
                   type="number"
                   min="0"
@@ -219,12 +240,6 @@ export function Survey() {
             </form>
           </CardContent>
         </Card>
-
-        <div className="text-center mt-8">
-          <p className="text-zinc-400 text-sm">
-            Your feedback helps us build better transportation solutions for everyone.
-          </p>
-        </div>
       </div>
     </div>
   );

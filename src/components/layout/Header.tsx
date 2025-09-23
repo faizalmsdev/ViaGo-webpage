@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -30,6 +31,7 @@ export function Header() {
             <a href="#how-it-works" className="text-zinc-400 hover:text-white transition-colors">How It Works</a>
             <a href="#safety" className="text-zinc-400 hover:text-white transition-colors">Safety</a>
             <a href="#pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</a>
+            <Link to="/survey" className="text-zinc-400 hover:text-white transition-colors">Survey</Link>
           </nav>
 
           {/* Desktop CTA Buttons */}
@@ -63,6 +65,7 @@ export function Header() {
               <a href="#how-it-works" className="text-zinc-400 hover:text-white transition-colors">How It Works</a>
               <a href="#safety" className="text-zinc-400 hover:text-white transition-colors">Safety</a>
               <a href="#pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</a>
+              <Link to="/survey" className="text-zinc-400 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>Survey</Link>
               <div className="pt-4 space-y-4">
                 <Button variant="ghost" className="w-full text-white">
                   Sign In
