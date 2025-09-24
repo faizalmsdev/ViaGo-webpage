@@ -1,15 +1,22 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://viago.cabs/sitemap.xml
-
-# Important pages for crawling
 Allow: /survey
 Allow: /delete-account
+Allow: /sitemap.xml
 
-# Block admin or sensitive areas (if any)
+# Sitemap location
+Sitemap: https://viagocabs.in/sitemap.xml
+
+# Block any admin areas (if any exist)
 # Disallow: /admin/
+# Disallow: /api/
 
-# Crawl delay (optional)
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay
 Crawl-delay: 1
