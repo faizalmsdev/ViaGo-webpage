@@ -13,10 +13,10 @@ const options = [
   },
   {
     icon: Users,
-    title: 'Outstation',
-    description: 'Intercity travel made affordable',
-    features: ['Long-distance rides', 'Flexible scheduling', 'Comfortable vehicles'],
-    price: 'From ₹7/km (*Price may varry)'
+    title: 'Shared Auto',
+    description: 'Travel 15km under ₹60 with shared auto rides',
+    features: ['Pre-booking for no conflicts', 'Driver-set fair pricing', 'Shared rides for better rates'],
+    price: 'Under ₹60 for 15km (*Price set by drivers)'
   },
   {
     icon: Bike,
