@@ -6,6 +6,7 @@ import { Features } from "@/components/sections/Features";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { RideOptions } from "@/components/sections/RideOptions";
 import { Safety } from "@/components/sections/Safety";
+import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/layout/Footer";
 import { BetaSignupForm } from "@/components/sections/BetaSignupForm";
 import { Survey } from "@/components/sections/Survey";
@@ -43,6 +44,7 @@ function HomePage() {
       <HowItWorks />
       <RideOptions />
       <Safety />
+      <FAQ />
       <BetaSignupForm />
       <SurveyPopup 
         isOpen={showSurveyPopup} 

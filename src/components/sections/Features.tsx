@@ -67,6 +67,29 @@ export function Features() {
             </Card>
           ))}
         </div>
+        
+        {/* SEO Content */}
+        <div className="mt-16 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-6">Why Viago is Chennai's Best Ride Sharing Platform</h3>
+            <div className="text-zinc-400 text-sm leading-relaxed space-y-4">
+              <p>
+                Looking for <strong>how to travel cheap in Chennai</strong>? Viago Cabs offers the most affordable auto and cab booking service in Chennai. 
+                With our innovative <strong>shared auto rides</strong>, you can travel up to 15km for under ₹60 - making it the cheapest way to commute in the city.
+              </p>
+              <p>
+                <strong>Viago</strong> (also known as <strong>ViagoCabs</strong> or <strong>Viago Cabs</strong>) is revolutionizing urban transportation with our 
+                zero-commission <strong>ride sharing platform</strong>. Unlike other cab services, we let drivers set their own fair prices, ensuring 
+                better earnings for drivers and competitive rates for passengers.
+              </p>
+              <p>
+                Download the <strong>Viago app</strong> from Google Play Store and experience conflict-free travel with pre-booking, 
+                real-time tracking, and the most affordable ride options in Chennai. Perfect for daily commuters, students, and anyone looking for 
+                <strong>cheap auto service</strong> and <strong>share auto</strong> options.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
