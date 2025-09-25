@@ -1,5 +1,6 @@
 import { Shield, Lock, Award, HeartHandshake } from 'lucide-react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -70,6 +71,12 @@ export function Safety() {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-zinc-400">
+            Have concerns or suggestions about our safety measures? <Link to="/survey" className="text-[#ffbf00] hover:text-[#ffbf00]/80 underline">Let us know through our survey</Link> - your safety feedback is valuable to us.
+          </p>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { Bike, DollarSign, Shield, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -15,8 +16,8 @@ const features = [
   },  
   {
     icon: Bike,
-    title: 'Bike Rentals',
-    description: 'Rent out your bike or find one to ride. Flexible mobility solutions. Coming soon in beta, enjoy the ease of renting a bike in just 3 clicks!'
+    title: 'Bike Sharing with Pre-booking',
+    description: 'Book bikes in advance with guaranteed availability. Pre-booking system eliminates conflicts and ensures your bike is ready when you need it. Rent in just 3 clicks!'
   },  
   {
     icon: Shield,
@@ -86,6 +87,10 @@ export function Features() {
                 Download the <strong>Viago app</strong> from Google Play Store and experience conflict-free travel with pre-booking, 
                 real-time tracking, and the most affordable ride options in Chennai. Perfect for daily commuters, students, and anyone looking for 
                 <strong>cheap auto service</strong> and <strong>share auto</strong> options.
+              </p>
+              <p>
+                Help us improve! Take the <Link to="/survey" className="text-yellow-400 hover:text-yellow-300 underline"><strong>Viago Cabs survey</strong></Link> to share your travel preferences and pricing expectations. 
+                Your feedback shapes our <strong>bike sharing</strong>, <strong>auto booking</strong>, and cab services to better serve Chennai's transportation needs.
               </p>
             </div>
           </div>

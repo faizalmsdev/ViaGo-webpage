@@ -22,8 +22,26 @@ export function Survey() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Load Google Analytics for survey page
+  // Load Google Analytics and update SEO for survey page
   useEffect(() => {
+    // Update page title and meta for better SEO
+    const originalTitle = document.title;
+    const originalDescription = document.querySelector('meta[name="description"]')?.getAttribute('content');
+    
+    document.title = 'Viago Cabs Survey - Help Shape Chennai\'s Best Ride Sharing Platform';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Share your travel preferences with Viago Cabs survey. Help us improve bike sharing, auto booking, and cab services in Chennai. Your feedback shapes our ride-sharing platform.');
+    }
+    
+    // Cleanup function to restore original title and description
+    return () => {
+      document.title = originalTitle;
+      if (metaDescription && originalDescription) {
+        metaDescription.setAttribute('content', originalDescription);
+      }
+    };
+    
     // Check if gtag script is already loaded for survey
     const existingScript = document.querySelector('script[src*="G-K2PH603QNL"]');
     if (existingScript) return;

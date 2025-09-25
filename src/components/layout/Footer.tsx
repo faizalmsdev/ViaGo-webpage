@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Dialog,
   DialogContent,
@@ -106,6 +107,11 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
+              <li>
+                <Link to="/survey" className="hover:text-white transition-colors text-[#ffbf00] hover:text-[#ffbf00]/80">
+                  Take Survey - Help Us Improve
+                </Link>
+              </li>
               <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
             </ul>

@@ -2,14 +2,15 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Car, Bike, Users, Clock } from 'lucide-react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const options = [
   {
-    icon: Car,
-    title: 'Daily Commute',
-    description: 'Regular rides to work or college',
-    features: ['Schedule recurring trips', 'Match with regular co-riders', 'Split costs efficiently'],
-    price: 'From ₹5/km (*Price may varry)'
+    icon: Bike,
+    title: 'Bike Sharing with Pre-booking',
+    description: 'Book bikes in advance for guaranteed availability',
+    features: ['Pre-booking up to 7 days ahead', 'Wide variety of bikes', 'No conflicts, guaranteed rides'],
+    price: 'From ₹20/hour (*Price may varry)'
   },
   {
     icon: Users,
@@ -19,11 +20,11 @@ const options = [
     price: 'Under ₹60 for 15km (*Price set by drivers)'
   },
   {
-    icon: Bike,
-    title: 'Bike Rentals',
-    description: 'Rent bikes for short trips',
-    features: ['Hourly rentals', 'Wide variety of bikes', 'No security deposit'],
-    price: 'From ₹20/hour (*Price may varry)'
+    icon: Car,
+    title: 'Cab Booking',
+    description: 'Comfortable cab rides for longer distances',
+    features: ['Pre-book your cab', 'Professional drivers', 'AC vehicles available'],
+    price: 'From ₹5/km (*Price may varry)'
   },
   {
     icon: Clock,
@@ -95,6 +96,12 @@ export function RideOptions() {
               </div>
             </Card>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-zinc-400 mb-4">
+            Want to help us improve our services? <Link to="/survey" className="text-[#ffbf00] hover:text-[#ffbf00]/80 underline">Take our quick survey</Link> and share your transport needs in Chennai.
+          </p>
         </div>
       </div>
     </section>

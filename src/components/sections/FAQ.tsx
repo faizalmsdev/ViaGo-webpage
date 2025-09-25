@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const faqs = [
   {
@@ -30,6 +31,29 @@ const faqs = [
   {
     question: "Is Viago available throughout Chennai?",
     answer: "Yes, Viago operates across Chennai, providing affordable transportation solutions including shared autos, cab booking, and bike rentals in all major areas of the city."
+  },
+  {
+    question: "What is the Viago Cabs survey about?",
+    answer: (
+      <span>
+        The Viago Cabs survey helps us understand your travel preferences and pricing expectations in Chennai. By sharing your travel routes and budget, you help us improve our bike sharing, auto booking, and cab services to better serve the community. 
+        <Link to="/survey" className="text-[#ffbf00] hover:text-[#ffbf00]/80 underline ml-1">
+          Take the survey here →
+        </Link>
+      </span>
+    )
+  },
+  {
+    question: "How can I participate in the Viago survey?",
+    answer: (
+      <span>
+        You can take the Viago survey by visiting our 
+        <Link to="/survey" className="text-[#ffbf00] hover:text-[#ffbf00]/80 underline mx-1">
+          dedicated survey page
+        </Link>
+        or clicking the survey link in our navigation menu. The survey asks about your travel locations, preferred pricing, and helps shape our ride-sharing platform to meet Chennai's transportation needs.
+      </span>
+    )
   },
   {
     question: "What types of vehicles can I book through Viago?",
@@ -68,9 +92,9 @@ export function FAQ() {
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-6">
-                  <p className="text-zinc-300 leading-relaxed">
+                  <div className="text-zinc-300 leading-relaxed">
                     {faq.answer}
-                  </p>
+                  </div>
                 </div>
               )}
             </Card>

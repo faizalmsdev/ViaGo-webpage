@@ -1,5 +1,6 @@
 import { Car, MapPin, Phone, Clock } from 'lucide-react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const steps = [
   {
@@ -69,6 +70,12 @@ export function HowItWorks() {
               <p className="text-zinc-400">{step.description}</p>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-zinc-400">
+            Ready to experience hassle-free travel? <Link to="/survey" className="text-[#ffbf00] hover:text-[#ffbf00]/80 underline">Take our survey</Link> to help us customize your perfect ride experience.
+          </p>
         </div>
       </div>
     </section>

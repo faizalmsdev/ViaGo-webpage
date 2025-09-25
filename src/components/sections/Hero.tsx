@@ -52,11 +52,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-            Travel Cheap in Chennai with <span className="text-[#ffbf00]">Viago Cabs</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+            Travel Cheap in Chennai<br />with <span className="text-[#ffbf00]">Viago</span>
           </h1>
           <p className="text-xl text-zinc-200 mb-8">
-            Book shared auto rides for 15km under ₹60! India's most affordable ride-sharing platform with zero commission, driver-set pricing, and pre-booking for conflict-free travel.
+            Book shared auto rides & bike sharing with pre-booking for 15km under ₹60! India's most affordable platform for auto booking, bike sharing, and cab services. Zero commission, driver-set pricing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
           <Button 
