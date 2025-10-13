@@ -2,6 +2,21 @@ User-agent: *
 Allow: /
 Allow: /survey
 Allow: /delete-account
+Allow: /bike-ride-hailing-chennai
+Allow: /bike-taxi-chennai
+Allow: /ride-sharing-app-chennai
+Allow: /zero-commission-bike-rides
+Allow: /bike-ride-velachery-chennai
+Allow: /bike-taxi-t-nagar-chennai
+Allow: /bike-taxi-adyar-chennai
+Allow: /bike-rides-omr-chennai
+Allow: /driver-signup
+Allow: /earn-by-posting-rides-chennai
+Allow: /blog/
+Allow: /contact
+Allow: /about
+Allow: /privacy-policy
+Allow: /terms-of-service
 Allow: /sitemap.xml
 
 # Sitemap location
@@ -14,9 +29,31 @@ Sitemap: https://viagocabs.in/sitemap.xml
 # Allow all search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Mobile-specific crawlers
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Host declaration
+Host: viagocabs.in
 
 # Crawl delay
 Crawl-delay: 1

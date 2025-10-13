@@ -1,19 +1,68 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-   const handleScrollToBeta = () => {
-    const targetElement = document.getElementById('get-beta');
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+  const handleScrollToBeta = () => {
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const targetElement = document.getElementById('get-beta');
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      }, 100);
+    } else {
+      // If we're already on homepage, just scroll to section
+      const targetElement = document.getElementById('get-beta');
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
     }
+  };  const handleNavigation = (sectionId: string) => {
+    // If we're not on the homepage, navigate to homepage first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      }, 100);
+    } else {
+      // If we're already on homepage, just scroll to section
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+    setIsMenuOpen(false);
   };
 
   return (
@@ -21,16 +70,17 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2">
+          <button onClick={handleLogoClick} className="flex items-center space-x-2">
             <span className="text-2xl font-bold text-white">Viago</span>
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-zinc-400 hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" className="text-zinc-400 hover:text-white transition-colors">How It Works</a>
-            <a href="#safety" className="text-zinc-400 hover:text-white transition-colors">Safety</a>
-            <a href="#pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</a>
+            <Link to="/" className="text-zinc-400 hover:text-white transition-colors">Home</Link>
+            <button onClick={() => handleNavigation('features')} className="text-zinc-400 hover:text-white transition-colors">Features</button>
+            <button onClick={() => handleNavigation('how-it-works')} className="text-zinc-400 hover:text-white transition-colors">How It Works</button>
+            <button onClick={() => handleNavigation('safety')} className="text-zinc-400 hover:text-white transition-colors">Safety</button>
+            <button onClick={() => handleNavigation('pricing')} className="text-zinc-400 hover:text-white transition-colors">Pricing</button>
             <Link to="/survey" className="text-zinc-400 hover:text-white transition-colors">Survey</Link>
           </nav>
 
@@ -61,10 +111,11 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#features" className="text-zinc-400 hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" className="text-zinc-400 hover:text-white transition-colors">How It Works</a>
-              <a href="#safety" className="text-zinc-400 hover:text-white transition-colors">Safety</a>
-              <a href="#pricing" className="text-zinc-400 hover:text-white transition-colors">Pricing</a>
+              <Link to="/" className="text-zinc-400 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <button onClick={() => handleNavigation('features')} className="text-zinc-400 hover:text-white transition-colors text-left">Features</button>
+              <button onClick={() => handleNavigation('how-it-works')} className="text-zinc-400 hover:text-white transition-colors text-left">How It Works</button>
+              <button onClick={() => handleNavigation('safety')} className="text-zinc-400 hover:text-white transition-colors text-left">Safety</button>
+              <button onClick={() => handleNavigation('pricing')} className="text-zinc-400 hover:text-white transition-colors text-left">Pricing</button>
               <Link to="/survey" className="text-zinc-400 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>Survey</Link>
               <div className="pt-4 space-y-4">
                 <Button variant="ghost" className="w-full text-white">

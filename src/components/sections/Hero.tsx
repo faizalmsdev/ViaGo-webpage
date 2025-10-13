@@ -56,7 +56,7 @@ export function Hero() {
             Travel Cheap in Chennai<br />with <span className="text-[#ffbf00]">Viago</span>
           </h1>
           <p className="text-xl text-zinc-200 mb-8">
-            Book shared auto rides & bike sharing with pre-booking for 15km under ₹60! India's most affordable platform for auto booking, bike sharing, and cab services. Zero commission, driver-set pricing.
+            Chennai's #1 bike ride-hailing app! Book cheap bike taxi rides with zero commission. Share your route across T Nagar, Velachery, Adyar & OMR. Driver sets fare - most affordable bike taxi for daily commute in Chennai.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
           <Button 
@@ -64,7 +64,7 @@ export function Hero() {
             className="bg-[#ffbf00] hover:bg-[#ffd700] text-black font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
             onClick={() => window.open("https://play.google.com/store/apps/details?id=com.viagocab.viago&hl=en_IN", "_blank")}
           >
-            Download Viago App
+            Download ViaGo Bike Taxi App
             <ArrowRight className="ml-2" />
           </Button>
 
@@ -74,7 +74,7 @@ export function Hero() {
             className="text-white border-white bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg hover:bg-opacity-20 transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto"
             onClick={() => window.open("https://play.google.com/store/apps/details?id=com.viagocab.viago&hl=en_IN", "_blank")}
           >
-            Book Cheap Rides
+            Book Bike Ride Now
           </Button>
           </div>
         </motion.div>

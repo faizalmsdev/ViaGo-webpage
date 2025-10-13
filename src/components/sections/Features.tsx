@@ -6,23 +6,23 @@ import { Link } from 'react-router-dom';
 const features = [
   {
     icon: DollarSign,
-    title: '0% Commission',
-    description: 'Keep 100% of your earnings.we offer fares that are 16% lower than our competitors, ensuring better value for riders while maintaining fair driver earnings.'
+    title: 'Zero Commission Bike Rides',
+    description: 'Keep 100% of your earnings! ViaGo is the only zero commission ride-sharing app in Chennai. Drivers earn more, riders pay less - making it the cheapest bike taxi platform.'
   },  
   {
     icon: Users,
-    title: 'Community Driven',
-    description: 'Anyone can be a driver or rider.Build trust with our specialized review feature, allowing users to verify drivers and riders before accepting rides.'
+    title: 'Share Your Ride Chennai',
+    description: 'Connect with riders on your route! Share costs and reduce traffic. Our community-driven bike ride-hailing app helps you find co-passengers for affordable travel across Chennai.'
   },  
   {
     icon: Bike,
-    title: 'Bike Sharing with Pre-booking',
-    description: 'Book bikes in advance with guaranteed availability. Pre-booking system eliminates conflicts and ensures your bike is ready when you need it. Rent in just 3 clicks!'
+    title: 'Quick Bike Rides Chennai',
+    description: 'Book bike taxi in seconds! Fast pickup times across T Nagar, Velachery, Adyar & OMR. Best bike cab booking app for daily commute with driver-set fair pricing.'
   },  
   {
     icon: Shield,
-    title: 'Safe & Secure',
-    description: 'Verified profiles to build trust, real-time ride monitoring for added safety, and a specialized security feature. Enjoy peace of mind with 24/7 customer support.'
+    title: 'Safe Bike Taxi Service',
+    description: 'Verified drivers and real-time tracking for secure bike rides. 24/7 support ensures safe bike taxi experience across Chennai with trusted ride-sharing community.'
   },
   
 ];
@@ -56,7 +56,7 @@ export function Features() {
   return (
     <section id="features" className="py-20 bg-zinc-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-white">Why Choose Viago?</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-white">Why Choose ViaGo for Bike Ride-Hailing in Chennai?</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <Card key={index} className="p-6 hover:shadow-lg transition-shadow bg-zinc-900 border-zinc-800">
@@ -72,25 +72,31 @@ export function Features() {
         {/* SEO Content */}
         <div className="mt-16 text-center">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-6">Why Viago is Chennai's Best Ride Sharing Platform</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Chennai's Best Bike Ride-Hailing & Taxi Service</h3>
             <div className="text-zinc-400 text-sm leading-relaxed space-y-4">
               <p>
-                Looking for <strong>how to travel cheap in Chennai</strong>? Viago Cabs offers the most affordable auto and cab booking service in Chennai. 
-                With our innovative <strong>shared auto rides</strong>, you can travel up to 15km for under ₹60 - making it the cheapest way to commute in the city.
+                Looking for <strong>cheap bike taxi Chennai</strong>? ViaGo is the leading <strong>bike ride-hailing Chennai</strong> app offering 
+                <strong>zero commission bike rides</strong> across the city. Our innovative <strong>ride-sharing app Chennai</strong> connects you with 
+                drivers on similar routes, making it the most <strong>affordable bike taxi app</strong> available.
               </p>
               <p>
-                <strong>Viago</strong> (also known as <strong>ViagoCabs</strong> or <strong>Viago Cabs</strong>) is revolutionizing urban transportation with our 
-                zero-commission <strong>ride sharing platform</strong>. Unlike other cab services, we let drivers set their own fair prices, ensuring 
-                better earnings for drivers and competitive rates for passengers.
+                Experience <strong>quick bike rides Chennai</strong> with our instant booking system. Whether you're commuting to work or exploring the city, 
+                ViaGo's <strong>bike cab booking Chennai</strong> service covers all major areas including <strong>bike ride Velachery Chennai</strong>, 
+                <strong>ride-share T Nagar Chennai</strong>, <strong>bike taxi Adyar Chennai</strong>, and <strong>cheap bike rides OMR Chennai</strong>.
               </p>
               <p>
-                Download the <strong>Viago app</strong> from Google Play Store and experience conflict-free travel with pre-booking, 
-                real-time tracking, and the most affordable ride options in Chennai. Perfect for daily commuters, students, and anyone looking for 
-                <strong>cheap auto service</strong> and <strong>share auto</strong> options.
+                Join thousands of satisfied users who've discovered <strong>how to find cheap bike rides in Chennai</strong> with ViaGo. 
+                Our <strong>no commission ride-sharing app</strong> ensures fair pricing where <strong>driver sets fare app</strong> model benefits everyone. 
+                <strong>Viago app download</strong> is free and easy - start saving on your daily commute today!
               </p>
               <p>
-                Help us improve! Take the <Link to="/survey" className="text-yellow-400 hover:text-yellow-300 underline"><strong>Viago Cabs survey</strong></Link> to share your travel preferences and pricing expectations. 
-                Your feedback shapes our <strong>bike sharing</strong>, <strong>auto booking</strong>, and cab services to better serve Chennai's transportation needs.
+                For drivers: <strong>Earn by posting rides Chennai</strong> on our <strong>bike drivers zero commission platform</strong>. 
+                Learn <strong>how to make money with bike taxi Chennai</strong> through our driver program. 
+                Complete your <strong>ViaGo driver signup Chennai</strong> and start earning 100% of your fares immediately!
+              </p>
+              <p>
+                Help us improve Chennai's transportation! Take the <Link to="/survey" className="text-yellow-400 hover:text-yellow-300 underline">
+                <strong>ViaGo survey</strong></Link> to shape the future of <strong>bike taxi for daily commute Chennai</strong> services.
               </p>
             </div>
           </div>

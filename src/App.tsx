@@ -11,6 +11,12 @@ import { Footer } from "@/components/layout/Footer";
 import { BetaSignupForm } from "@/components/sections/BetaSignupForm";
 import { Survey } from "@/components/sections/Survey";
 import { SurveyPopup } from "@/components/sections/SurveyPopup";
+import { SEOContent } from "@/components/sections/SEOContent";
+import DriverSignup from "@/components/DriverSignup";
+import { CheapBikeRidesBlog } from "@/components/blog/CheapBikeRidesBlog";
+import { BestBikeAppsComparison } from "@/components/blog/BestBikeAppsComparison";
+import { BikeCommuteGuideBlog } from "@/components/blog/BikeCommuteGuideBlog";
+import { EarnByPostingRidesBlog } from "@/components/blog/EarnByPostingRidesBlog";
 import { Toaster } from "@/components/ui/toaster";
 import DeleteAccountPage from "@/components/DeleteAccountPage";
 
@@ -44,6 +50,7 @@ function HomePage() {
       <HowItWorks />
       <RideOptions />
       <Safety />
+      <SEOContent />
       <FAQ />
       <BetaSignupForm />
       <SurveyPopup 
@@ -63,6 +70,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/delete-account" element={<DeleteAccountPage />} />
           <Route path="/survey" element={<Survey />} />
+          <Route path="/driver-signup" element={<DriverSignup />} />
+          <Route path="/blog/how-to-find-cheap-bike-rides-chennai" element={<CheapBikeRidesBlog />} />
+          <Route path="/blog/best-bike-ride-hailing-apps-chennai" element={<BestBikeAppsComparison />} />
+          <Route path="/blog/bike-taxi-daily-commute-chennai" element={<BikeCommuteGuideBlog />} />
+          <Route path="/blog/earn-by-posting-rides-chennai" element={<EarnByPostingRidesBlog />} />
         </Routes>
         <Footer />
         <Toaster />
