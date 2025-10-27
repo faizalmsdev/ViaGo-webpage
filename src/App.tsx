@@ -12,6 +12,7 @@ import { BetaSignupForm } from "@/components/sections/BetaSignupForm";
 import { Survey } from "@/components/sections/Survey";
 import { SurveyPopup } from "@/components/sections/SurveyPopup";
 import { SEOContent } from "@/components/sections/SEOContent";
+import { PromoPopup } from "@/components/sections/PromoPopup";
 import DriverSignup from "@/components/DriverSignup";
 import { CheapBikeRidesBlog } from "@/components/blog/CheapBikeRidesBlog";
 import { BestBikeAppsComparison } from "@/components/blog/BestBikeAppsComparison";
@@ -76,7 +77,8 @@ function App() {
           <Route path="/blog/bike-taxi-daily-commute-chennai" element={<BikeCommuteGuideBlog />} />
           <Route path="/blog/earn-by-posting-rides-chennai" element={<EarnByPostingRidesBlog />} />
         </Routes>
-        <Footer />
+  <Footer />
+  <PromoPopup />
         <Toaster />
       </div>
     </Router>

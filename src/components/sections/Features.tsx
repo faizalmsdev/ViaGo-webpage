@@ -69,6 +69,36 @@ export function Features() {
           ))}
         </div>
         
+        {/* Special Promotion Section */}
+        <div className="mt-16 mb-12">
+          <div className="bg-gradient-to-br from-[#ffbf00] via-[#ffd700] to-[#ffed4e] p-8 rounded-2xl shadow-2xl border-4 border-yellow-300">
+            <div className="text-center text-black">
+              <h3 className="text-3xl font-bold mb-4">🎉 EXCLUSIVE CASHBACK OFFER!</h3>
+              <div className="max-w-2xl mx-auto">
+                <p className="text-xl font-semibold mb-3">
+                  October 5th - 11th, 2025
+                </p>
+                <p className="text-2xl font-bold mb-4">
+                  Get 100% CASHBACK on all rides below ₹150!
+                </p>
+                <div className="bg-black bg-opacity-20 rounded-xl p-4 mb-4">
+                  <p className="font-medium text-lg">
+                    ✨ How to claim: Book your bike ride through ViaGo app and get instant cashback credited to your wallet!
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <div className="bg-white bg-opacity-90 text-black px-6 py-2 rounded-full font-semibold">
+                    📱 Available on ViaGo App
+                  </div>
+                  <div className="bg-white bg-opacity-90 text-black px-6 py-2 rounded-full font-semibold">
+                    🚀 Zero Commission + Cashback
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         {/* SEO Content */}
         <div className="mt-16 text-center">
           <div className="max-w-4xl mx-auto">

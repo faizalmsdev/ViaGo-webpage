@@ -51,17 +51,21 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-white text-xl font-bold mb-4">Viago</h3>
-            <p className="mb-4">Revolutionizing ride-sharing with zero commission and community-driven solutions.</p>
+            <p className="mb-4">Revolutionizing ride-sharing with zero commission and community-driven solutions. 🎉 Limited Offer: 100% Cashback on rides below ₹150 (Oct 5-11)!</p>
+            <p className="mb-4 text-sm text-zinc-300">Follow us for updates & exclusive offers:</p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon">
-                <Facebook className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Instagram className="h-5 w-5" />
-              </Button>
+              <Facebook 
+                className="h-6 w-6 text-white hover:text-[#ffbf00] cursor-pointer transition-colors" 
+                onClick={() => window.open("https://www.facebook.com/viagocabs", "_blank")}
+              />
+              <Twitter 
+                className="h-6 w-6 text-white hover:text-[#ffbf00] cursor-pointer transition-colors" 
+                onClick={() => window.open("https://x.com/viagocabs", "_blank")}
+              />
+              <Instagram 
+                className="h-6 w-6 text-white hover:text-[#ffbf00] cursor-pointer transition-colors" 
+                onClick={() => window.open("https://www.instagram.com/viagocabs/", "_blank")}
+              />
             </div>
           </div>
           

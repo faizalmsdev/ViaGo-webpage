@@ -46,6 +46,8 @@ export function Hero() {
 
 
       <div className="container mx-auto px-4 relative z-10 pt-20  md:py-20 text-center">
+        {/* Promotional banner removed from hero; replaced by PromoPopup shown on the HomePage */}
+
         <motion.div 
           className="max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
